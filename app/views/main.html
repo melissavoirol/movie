@@ -4,8 +4,16 @@
     <img src="images/yeoman.png" alt="I'm Yeoman"><br>
     Always a pleasure scaffolding your apps.
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+  <p><a class="btn btn-lg btn-success" ng-href="#/" ng-click="monClick()">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
 </div>
+
+<div>
+	{{awesomeThings}}
+</div>
+
+<ul>
+	<li ng-repeat="el in awesomeThings track by $index">{{el}}</li>
+</ul>
 
 <div class="row marketing">
   <h4>HTML5 Boilerplate</h4>
