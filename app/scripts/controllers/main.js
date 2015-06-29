@@ -9,18 +9,26 @@
  */
 angular.module('movieApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.films = [
-    ];
+    var filmsLS = localStorage.getItem('films');
+    if (filmsLS) {
+		$scope.films = JSON.parse(filmsLS);
+    }
+	else {
+    	$scope.films = [];
+    }
+    
 	$scope.ajouterElement = function () {
 		$scope.films.push($scope.nouveauFilm);
 		$scope.nouveauFilm = '';
 		stockageLocal ();
 
 	};
+
 	$scope.supprimerElement = function (film) {
 		$scope.films.splice($scope.films.indexOf(film), 1);
 		stockageLocal ();
 	}
+	
 	function stockageLocal () {
 		localStorage.setItem('films', JSON.stringify($scope.films));
 	}
