@@ -9,19 +9,13 @@
  */
 angular.module('movieApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
+    $scope.films = [
     ];
-	for (var i=0; i < 100; i++) {
-		$scope.awesomeThings.push('Element :' + (i+1));
-	}
-	$scope.monClick = function () {
-		$scope.awesomeThings.push($scope.nouveauFilm);
+	$scope.ajouterElement = function () {
+		$scope.films.push($scope.nouveauFilm);
 		$scope.nouveauFilm = '';
 	};
-	$scope.active = true;
-	$scope.nbAffiche = 20;
-	$scope.debut = 3;
+	$scope.supprimerElement = function (film) {
+		$scope.films.splice($scope.films.indexOf(film), 1);
+	}
   });
