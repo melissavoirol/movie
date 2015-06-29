@@ -14,8 +14,14 @@ angular.module('movieApp')
       'AngularJS',
       'Karma'
     ];
-	
+	for (var i=0; i < 100; i++) {
+		$scope.awesomeThings.push('Element :' + (i+1));
+	}
 	$scope.monClick = function () {
-		$scope.awesomeThings.push('Melissa');
+		$scope.awesomeThings.push($scope.nouveauFilm);
+		$scope.nouveauFilm = '';
 	};
+	$scope.active = true;
+	$scope.nbAffiche = 20;
+	$scope.debut = 3;
   });

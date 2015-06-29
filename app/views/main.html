@@ -7,13 +7,25 @@
   <p><a class="btn btn-lg btn-success" ng-href="#/" ng-click="monClick()">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
 </div>
 
-<div>
-	{{awesomeThings}}
-</div>
+<input type="text" ng-model="nouveauFilm" />
 
-<ul>
-	<li ng-repeat="el in awesomeThings track by $index">{{el}}</li>
-</ul>
+<p>{{nouveauFilm}}</p>
+<p ng-bind="nouveauFilm"></p>
+
+<p>Hello uppercase: {{nouveauFilm | uppercase}} World</p> <!-- filtre -->
+<p>Hello <span ng-bind="nouveauFilm"></span> World</p>
+
+<div>
+	{{awesomeThings[3]}}
+</div>
+<label><input type="number" ng-model="nbAffiche" />nb à afficher</label>
+<input type="checkbox" ng-model="active"></input>
+<button class="btn btn-primary" ng-click="debut=debut+10">+10</button> {{debut}}
+<div ng-show="active"> <!-- ng-hide ou !active -->
+	<ul>
+		<li ng-repeat="el in awesomeThings | limitTo:nbAffiche:debut track by $index">{{el}}</li>
+	</ul>
+</div>
 
 <div class="row marketing">
   <h4>HTML5 Boilerplate</h4>
