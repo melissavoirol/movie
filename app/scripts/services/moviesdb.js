@@ -34,6 +34,7 @@ angular.module('movieApp')
 
     // Public API here
     return {
+      //imgUrl = '';
       someMethod: function () {
         return meaningOfLife;
       },
