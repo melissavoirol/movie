@@ -25,11 +25,6 @@ angular.module('movieApp')
       localStorage.setItem('movies', JSON.stringify(movies));
 	}
 
-    $http.get('http://amc.ig.he-arc.ch:3003/movie/upcoming?language=fr')
-    .success(function(data) {
-    	movies = data.results;
-    })
-
     var meaningOfLife = 42;
 
     // Public API here

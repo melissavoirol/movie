@@ -1,4 +1,11 @@
-<div class="jumbotron bg_img" style="background-image: url({{MoviesDB.imgURL}}w1280{{movie.backdrop_path}})">
-    <p><strong>Titre:</strong> {{movie.title}}</p>
-    <p><strong>Synoptique:</strong> {{movie.overview}}</p>
+<p><strong>Titre:</strong> {{movie.title}}</p>
+<p><strong>Synoptique:</strong> {{movie.overview}}</p>
+<div>
+    <h3>Films similaires:</h3>
+    <ul>
+	   <li ng-repeat="movie in movies">
+		  <img ng-src="{{movie.poster_path | urlPoster}}" />
+		  <a ng-href="#/movie/{{movie.id}}">{{movie.title}}</a>
+	   </li>
+    </ul>
 </div>
