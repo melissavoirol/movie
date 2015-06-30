@@ -34,7 +34,8 @@ angular.module('movieApp')
 
     // Public API here
     return {
-      //imgUrl = '';
+      imgURL: 'http://image.tmdb.org/t/p/',
+      
       someMethod: function () {
         return meaningOfLife;
       },

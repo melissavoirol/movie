@@ -9,8 +9,8 @@
  */
 angular.module('movieApp')
   .controller('MainCtrl', function ($scope, MoviesDB) {
-  	$scope.MoviesDB = MoviesDB;
   	$scope.movies = MoviesDB.getMovies();
+  	$scope.MoviesDB = MoviesDB;
     
 	$scope.addMovie = function () {
 		MoviesDB.addMovie({title:$scope.newMovie, overview:$scope.overview});

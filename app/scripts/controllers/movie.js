@@ -11,4 +11,5 @@ angular.module('movieApp')
   .controller('MovieCtrl', function ($scope, $routeParams, MoviesDB) {
     $scope.id = $routeParams.id;
     $scope.movie = MoviesDB.getMovies()[$routeParams.id];
+    $scope.MoviesDB = MoviesDB;
   });
