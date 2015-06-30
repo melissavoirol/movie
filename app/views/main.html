@@ -1,8 +1,9 @@
 <div class="jumbotron">
-  <label>Ajouter un film<input type="text" ng-model="nouveauFilm" /></label>
-  <button type="button" class="btn btn-success" ng-click="ajouterElement()">Ajouter</button>
+	<label>Ajouter un film<input type="text" ng-model="newMovie" /></label>
+	<label>Commentaire<textarea rows="4" cols="40" ng-model="comment" {resize: none}></textarea></label>
+	<button type="button" class="btn btn-success" ng-click="addMovie()">Ajouter</button>
 </div>
 
 <ul>
-	<li ng-repeat="film in films track by $index">{{film}}<button type="button" class="btn btn-danger btn-xs" ng-click="supprimerElement(film)">X</button></li>
+	<li ng-repeat="movie in movies track by $index">{{movie.title}}<button type="button" class="btn btn-danger btn-xs" ng-click="deleteMovie(movie)">X</button></li>
 </ul>

@@ -9,27 +9,29 @@
  */
 angular.module('movieApp')
   .controller('MainCtrl', function ($scope) {
-    var filmsLS = localStorage.getItem('films');
-    if (filmsLS) {
-		$scope.films = JSON.parse(filmsLS);
+    var moviesLS = localStorage.getItem('movies');
+    if (moviesLS) {
+		$scope.movies = JSON.parse(moviesLS);
     }
 	else {
-    	$scope.films = [];
+    	$scope.movies = [];
     }
     
-	$scope.ajouterElement = function () {
-		$scope.films.push($scope.nouveauFilm);
-		$scope.nouveauFilm = '';
+	$scope.addMovie = function () {
+		var movie = {title:$scope.newMovie, comment:$scope.comment};
+		$scope.movies.push(movie);
+		$scope.newMovie = '';
+		$scope.comment = '';
 		stockageLocal ();
 
 	};
 
-	$scope.supprimerElement = function (film) {
-		$scope.films.splice($scope.films.indexOf(film), 1);
+	$scope.deleteMovie = function (movie) {
+		$scope.movies.splice($scope.movies.indexOf(movie), 1);
 		stockageLocal ();
 	}
 	
 	function stockageLocal () {
-		localStorage.setItem('films', JSON.stringify($scope.films));
+		localStorage.setItem('movies', JSON.stringify($scope.movies));
 	}
   });
