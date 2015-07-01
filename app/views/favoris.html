@@ -4,6 +4,7 @@
 		<div ng-repeat="f in favoris" class="col-md-4">
 		  <p>{{f.title}}</p>
 		  <img ng-src="{{f.poster_path | urlPoster}}" />
+		  <button type="button" class="btn btn-danger btn-xs" ng-click="deleteFavori({{f.id}})">X</button></li> 
 	   </div> 
 	<!--poster-->
 </div>

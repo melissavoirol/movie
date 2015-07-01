@@ -12,11 +12,13 @@ angular.module('movieApp')
   	$http.get('http://amc.ig.he-arc.ch:3003/movie/upcoming?language=fr')
     .success(function(data) {
     	$scope.movies  = data.results;
-    })
-
-  	$scope.MoviesDB = MoviesDB;
     
-	$scope.addFavori = function (movieId) {
-		MoviesDB.addFavori(movieId);
-	};
+		$scope.MoviesDB = MoviesDB;
+
+		$scope.addFavori = function (movieId) {
+			MoviesDB.addFavori(movieId);
+		};
+
+		$scope.active = true;
+	})
   });

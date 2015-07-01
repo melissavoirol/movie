@@ -42,6 +42,11 @@ angular.module('movieApp')
 
 	  getFavoris: function () {
 	  	return movies;
+	  },
+
+	  deleteFavori: function (id) {
+	  	movies.splice(movies.indexOf(id), 1);
+	  	stockageLocal ();
 	  }
     };
   });
