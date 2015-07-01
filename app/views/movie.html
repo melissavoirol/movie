@@ -1,6 +1,9 @@
 <div class="jumbotron" style="opacity: 0.9">
 	<p><strong>Titre:</strong> {{movie.title}}</p>
 	<p><strong>Synoptique:</strong> {{movie.overview}}</p>
+	<flag country="fr" size="32"></flag>
+	<!--<flag country="{{releases.countries.iso_3166_1}}" size="32"></flag>-->
+	<p>{{movie.release_date}}</p>
 	<h3>Similaire</h3>
 	<slick dots="true" infinite="false" slides-to-show="3" slides-to-scroll="3" responsive="breakpoints" init-onload="true" data="movie.similar.results">
 		<div ng-repeat="r in movie.similar.results">
