@@ -14,7 +14,8 @@ angular
     'ngCookies',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'slick'
   ])
   .config(function ($routeProvider) {
     $routeProvider

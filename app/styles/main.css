@@ -9,9 +9,9 @@ body {
   padding: 0;
 }
 
-.bg_img {
+.movie_poster {
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
