@@ -17,4 +17,7 @@ angular.module('movieApp')
     	$rootScope.bgImage = movie.backdrop_path;
     })
 
+    /*search
+        $http.get('http://amc.ig.he-arc.ch:3003/movie?query=' + $search + '&language=fr')
+        search/movie?query=matrix&language=fr*/
   });
