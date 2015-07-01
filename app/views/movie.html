@@ -1,13 +1,10 @@
-<div class="jumbotron">
+<div class="jumbotron" style="opacity: 0.9">
 	<p><strong>Titre:</strong> {{movie.title}}</p>
 	<p><strong>Synoptique:</strong> {{movie.overview}}</p>
-	<div>
-		<h3>Similaire</h3>
-		<ul>
-			<li ng-repeat="similarMovie in movie.similar.results">
-				<img ng-src="{{similarMovie.poster_path | urlPoster}}" />
-				<a ng-href="#/movie/{{similarMovie.id}}">{{similarMovie.title}}</a>
-			</li>
-		</ul>
-	</div>
+	<h3>Similaire</h3>
+	<slick dots="true" infinite="false" slides-to-show="3" slides-to-scroll="3" responsive="breakpoints" init-onload="true" data="movie.similar.results">
+		<div ng-repeat="r in movie.similar.results">
+			<a ng-href="#/movie/{{r.id}}"><img ng-src="{{r.poster_path | urlPoster}}" /></a>
+		</div>
+	</slick>
 </div>
