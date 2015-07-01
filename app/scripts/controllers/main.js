@@ -17,6 +17,6 @@ angular.module('movieApp')
   	$scope.MoviesDB = MoviesDB;
     
 	$scope.addFavori = function (movieId) {
-		MoviesDB.addFavori({id:movieId});
+		MoviesDB.addFavori(movieId);
 	};
   });
