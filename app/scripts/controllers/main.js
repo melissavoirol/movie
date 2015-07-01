@@ -16,13 +16,7 @@ angular.module('movieApp')
 
   	$scope.MoviesDB = MoviesDB;
     
-	$scope.addMovie = function () {
-		MoviesDB.addMovie({title:$scope.newMovie, overview:$scope.overview});
-		$scope.newMovie = '';
-		$scope.overview = '';
+	$scope.addFavori = function (movieId) {
+		MoviesDB.addFavori({id:movieId});
 	};
-
-	$scope.deleteMovie = function (movie) {
-		MoviesDB.deleteMovie(movie);
-	}
   });

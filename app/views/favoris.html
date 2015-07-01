@@ -1,1 +1,9 @@
-<p>This is the favoris view.</p>
+<div class="jumbotron" style="opacity: 0.9">
+	<h3>Mes favoris</h3>
+	<div class="row">
+		<div ng-repeat="f in favoris track by $index" class="col-md-4">
+		  <p>{{f.title}}</p>
+		  <img ng-src="{{f.poster_path | urlPoster}}" />
+	   </div> 
+	<!--poster-->
+</div>

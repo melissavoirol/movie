@@ -16,13 +16,27 @@ angular.module('movieApp')
     	$scope.movie  = movie;
     	$rootScope.bgImage = movie.backdrop_path;
 
-    	$scope.pays = [];
+    	$scope.countryFlags = [];
         var countries = $scope.movie.releases.countries;
         for (var i=0; i<countries.length; i++) {
           if(countries[i].iso_3166_1 == 'DE' || countries[i].iso_3166_1 == 'FR' || countries[i].iso_3166_1  == 'US') {
-            $scope.pays.push(countries[i]);
+            $scope.countryFlags.push(countries[i]);
           }
         };
+
+        $scope.actors = [];
+        var cast = $scope.movie.credits.cast;
+        for (var i=0; i<6; i++) {
+           $scope.actors.push(cast[i]);
+        }
+
+        $scope.realisator;
+        var crew = $scope.movie.credits.crew;
+        for (var i=0; i<crew.length; i++) {
+          if(crew[i].job == "Producer") {
+            $scope.realisator = crew[i];
+          }
+        }
     })
 
     /*search

@@ -3,11 +3,20 @@
 	<p><strong>Synoptique:</strong> {{movie.overview}}</p>
 	<h3>Releases</h3>
 	<div class="row">
-		<div ng-repeat="p in pays" class="col-md-4">
-			<flag country="{{p.iso_3166_1}}" size="32"></flag>
-			<p>{{p.release_date}}</p>
+		<div ng-repeat="cf in countryFlags" class="col-md-4">
+			<flag country="{{cf.iso_3166_1}}" size="32"></flag>
+			<p>{{cf.release_date}}</p>
 		</div>
 	</div>
+	<h3>Acteurs</h3>
+	<div class="row">
+		<div ng-repeat="a in actors" class="col-md-6">
+		<h4>{{a.character}}</h4>
+		<p>{{a.name}}</p>
+	</div> 
+	</div>
+	<h3>Réalisateur</h3>
+	<p>{{realisator.name}}</p>
 	<h3>Similaire</h3>
 	<slick dots="true" infinite="false" slides-to-show="3" slides-to-scroll="3" responsive="breakpoints" init-onload="true" data="movie.similar.results">
 		<div ng-repeat="r in movie.similar.results">

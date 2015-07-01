@@ -4,10 +4,11 @@
 		<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
 	</span>
 </div>
+<br />
 <div class="row">
   	<div ng-repeat="movie in movies" class="col-md-4">
   		<a ng-href="#/movie/{{movie.id}}"><img ng-src="{{movie.poster_path | urlPoster}}" /></a>
-		<button type="button" class="btn btn-success" ng-click="addMovie()">
+		<button type="button" class="btn btn-success" ng-click="addFavori({{movie.id}})">
 			<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 		</button>
 	</div>

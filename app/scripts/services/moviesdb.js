@@ -35,18 +35,13 @@ angular.module('movieApp')
         return meaningOfLife;
       },
 
-      getMovies: function () {
-        return movies;
-      },
-
-      addMovie: function (movie) {
-		movies.push(movie);
-		stockageLocal ();
+      addFavori: function (id) {
+	  	movies.push(id);
+	  	stockageLocal ();
 	  },
 
-      deleteMovie: function (movie) {
-        movies.splice(movies.indexOf(movie), 1);
-		stockageLocal ();
-	  },
+	  getFavoris: function () {
+	  	return movies;
+	  }
     };
   });
