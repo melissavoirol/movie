@@ -45,8 +45,19 @@ angular.module('movieApp')
 	  },
 
 	  deleteFavori: function (id) {
-	  	movies.splice(movies.indexOf(id), 1);
+        movies.splice(movies.indexOf(id), 1);
 	  	stockageLocal ();
+	  },
+
+	  isId: function (id) {
+        for (var i=0; i<movies.length; i++) {
+          if(movies.indexOf(id)) {
+            return false;
+          }
+          else {
+            return true;
+          }
+        }
 	  }
     };
   });

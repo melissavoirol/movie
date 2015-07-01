@@ -33,7 +33,7 @@ angular.module('movieApp')
         $scope.realisator;
         var crew = $scope.movie.credits.crew;
         for (var i=0; i<crew.length; i++) {
-          if(crew[i].job == "Producer") {
+          if(crew[i].job == "Director") {
             $scope.realisator = crew[i];
           }
         }

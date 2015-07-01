@@ -23,5 +23,13 @@ angular.module('movieApp')
           $scope.favoris.push(allMovies[i]);
         }
       }
+      
+      $scope.deleteFavori = function (movieId) {
+        MoviesDB.deleteFavori(movieId);
+	  }
+
+      $scope.isId = function (movieId) {
+        MoviesDB.isId(movieId);
+	  };
     })
   });
