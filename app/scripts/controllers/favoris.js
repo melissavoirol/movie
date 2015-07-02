@@ -24,9 +24,9 @@ angular.module('movieApp')
         }
       }
       
-      $scope.deleteFavori = function (movieId) {
-        MoviesDB.deleteFavori(movieId);
-        $scope.favoris.splice($scope.favoris.indexOf(movieId, 1));
+      $scope.deleteFavori = function (movie) {
+        MoviesDB.deleteFavori(movie.id);
+        $scope.favoris.splice($scope.favoris.indexOf(movie), 1);
 	  }
 
       $scope.isId = function (movieId) {

@@ -11,6 +11,7 @@ body {
 
 .movie {
   position: relative;
+  height: 280px;
 }
 
 .movie .btn {
