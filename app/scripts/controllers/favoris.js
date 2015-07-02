@@ -26,10 +26,11 @@ angular.module('movieApp')
       
       $scope.deleteFavori = function (movieId) {
         MoviesDB.deleteFavori(movieId);
+        $scope.favoris.splice($scope.favoris.indexOf(movieId, 1));
 	  }
 
       $scope.isId = function (movieId) {
         MoviesDB.isId(movieId);
-	  };
+	  }
     })
   });

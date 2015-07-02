@@ -51,13 +51,13 @@ angular.module('movieApp')
 
 	  isId: function (id) {
         for (var i=0; i<movies.length; i++) {
-          if(movies.indexOf(id)) {
-            return false;
+          if(movies.indexOf(id) > -1) {
+            return true;
           }
           else {
-            return true;
+            return false;
           }
         }
 	  }
-    };
+    }
   });

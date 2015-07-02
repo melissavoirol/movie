@@ -17,6 +17,6 @@ angular.module('movieApp')
 
 		$scope.addFavori = function (movieId) {
 			MoviesDB.addFavori(movieId);
-		};
+		}
 	})
   });
