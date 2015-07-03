@@ -9,6 +9,7 @@
  */
 angular.module('movieApp')
   .controller('MovieCtrl', function ($scope, $routeParams, MoviesDB, $http, $rootScope) {
+    $rootScope.query = '';
     $rootScope.MoviesDB = MoviesDB
 
     $http.get('http://amc.ig.he-arc.ch:3003/movie/' + $routeParams.id + '?append_to_response=similar,releases,credits&language=fr')
@@ -38,8 +39,4 @@ angular.module('movieApp')
           }
         }
     })
-
-    /*search
-        $http.get('http://amc.ig.he-arc.ch:3003/movie?query=' + $search + '&language=fr')
-        search/movie?query=matrix&language=fr*/
   });

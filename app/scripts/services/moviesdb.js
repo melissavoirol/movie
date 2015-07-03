@@ -11,6 +11,8 @@ angular.module('movieApp')
   .factory('MoviesDB', function ($http) {
     // Service logic
     // ...
+    var researchedMovies = [];
+
     var movies = [];
 
     var moviesLS = localStorage.getItem('movies');
@@ -33,6 +35,24 @@ angular.module('movieApp')
       
       someMethod: function () {
         return meaningOfLife;
+      },
+
+      getResearchedMovies: function () {
+      	return researchedMovies;
+      },
+
+      searchMovies: function (query) {
+        $http.get('http://amc.ig.he-arc.ch:3003/search/movie?query=' + query + '&language=fr')
+        .success(function(data) {
+        	researchedMovies = data.results;
+        });
+      },
+
+      loadMovies: function () {
+      	$http.get('http://amc.ig.he-arc.ch:3003/movie/upcoming?language=fr')
+        .success(function(data) {
+        	researchedMovies = data.results;
+        });
       },
 
       addFavori: function (id) {

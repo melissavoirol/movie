@@ -1,10 +1,3 @@
-<div class="input-group">
-	<input type="text" class="form-control" placeholder="Rechercher...">
-	<span class="input-group-btn">
-		<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-	</span>
-</div>
-<br />
 <div class="row">
   	<div ng-repeat="movie in movies" class="col-xs-6 col-md-4 movie">
   		<button type="button" class="btn btn-success" ng-click="addFavori(movie.id)" ng-hide="MoviesDB.isId(movie.id)">

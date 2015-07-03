@@ -28,14 +28,14 @@ angular
         templateUrl: 'views/movie.html',
         controller: 'MovieCtrl'
       })
+      .when('/rechercher/:query', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
         .when('/favoris', {
         templateUrl: 'views/favoris.html',
         controller: 'FavorisCtrl'
       })
-      /*.when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })*/
       .otherwise({
         redirectTo: '/'
       });
