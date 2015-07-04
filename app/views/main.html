@@ -1,4 +1,6 @@
-<div class="row">
+<div class="row" style="background-color: gray">
+	<h1 class="movies_title">MOVIES</h1>
+	<br />
   	<div ng-repeat="movie in MoviesDB.getResearchedMovies() track by $index" class="col-xs-6 col-md-4 movie">
   		<button type="button" class="btn btn-success" ng-click="addFavori(movie.id)" ng-hide="MoviesDB.isId(movie.id)">
 			<span class="glyphicon glyphicon-star" aria-hidden="true"></span>

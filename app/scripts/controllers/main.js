@@ -21,7 +21,7 @@ angular.module('movieApp')
 	$rootScope.refresh = function () {
 		MoviesDB.loadMovies ();
 		$scope.MoviesDB = MoviesDB;
-		$scope.query = '';
+		$rootScope.query = '';
 	}
 
 	var someMovies = $scope.MoviesDB.getResearchedMovies ();
